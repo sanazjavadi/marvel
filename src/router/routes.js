@@ -7,6 +7,40 @@ export default [
     component: () => lazyLoadView(import('@views/home.vue')),
   },
   {
+    path: '/signUp',
+    name: 'signUp',
+    component: () => lazyLoadView(import('@views/signup.vue')),
+  },
+  {
+    path: '/dashboard',
+    name: 'dashboard',
+    component: () => lazyLoadView(import('@views/dashboard/index.vue')),
+    children: [
+      {
+        path: '/',
+        component: () => lazyLoadView(import('@views/dashboard/projects.vue')),
+      },
+      {
+        path: 'folders',
+        component: () => lazyLoadView(import('@views/dashboard/folders.vue')),
+      },
+      {
+        path: 'archive',
+        component: () => lazyLoadView(import('@views/dashboard/archive.vue')),
+      },
+    ],
+  },
+  {
+    path: '/newProject',
+    name: 'newProject',
+    component: () => lazyLoadView(import('@views/create-project.vue')),
+  },
+  {
+    path: '/plans',
+    name: 'plans',
+    component: () => lazyLoadView(import('@views/plans.vue')),
+  },
+  {
     path: '/login',
     name: 'login',
     component: () => lazyLoadView(import('@views/login.vue')),

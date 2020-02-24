@@ -13,7 +13,8 @@ $size-input-border: 1px;
 $size-input-border-radius: (1em + $size-input-padding-vertical * 2) / 10;
 
 // BUTTONS
-$size-button-padding-vertical: $size-grid-padding / 2;
-$size-button-padding-horizontal: $size-grid-padding / 1.5;
+$size-button-padding-vertical: 1rem;
+$size-button-padding-horizontal: 1.5rem;
 $size-button-padding: $size-button-padding-vertical
   $size-button-padding-horizontal;
+$radius-button: 30px;

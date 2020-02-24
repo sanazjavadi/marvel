@@ -1,14 +1,9 @@
 <script>
-import NavBar from '@components/nav-bar.vue'
-
-export default {
-  components: { NavBar },
-}
+export default {}
 </script>
 
 <template>
   <div :class="$style.container">
-    <NavBar />
     <slot />
   </div>
 </template>

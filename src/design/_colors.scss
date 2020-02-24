@@ -1,16 +1,23 @@
 // CONTENT
-$color-body-bg: #f9f7f5;
+$color-body-bg: #ffff;
 $color-text: #444;
 $color-heading-text: #35495e;
+$color-base: purple;
+$color-title: black;
 
 // LINKS
-$color-link-text: #39a275;
+$color-link-text: black;
 $color-link-text-active: $color-text;
+$color-link-text-hover: purple;
 
 // INPUTS
 $color-input-border: lighten($color-heading-text, 50%);
 
 // BUTTONS
-$color-button-bg: $color-link-text;
+$color-button-bg: $color-base;
 $color-button-disabled-bg: darken(desaturate($color-button-bg, 20%), 10%);
 $color-button-text: white;
+
+//border
+$color-border-light: lightgray;
+$color-border-dark: gray;
