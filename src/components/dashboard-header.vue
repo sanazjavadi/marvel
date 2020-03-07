@@ -16,7 +16,7 @@ export default {
       if (projects_.length > 1) {
         this.$router.push('/plans')
       } else {
-        this.$router.push('/createproject')
+        this.$router.push('/newProject')
       }
     },
   },

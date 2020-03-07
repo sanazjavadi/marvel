@@ -10,6 +10,9 @@ export const getters = {}
 export const mutations = {
   CACHE_PROJECTS(state, payload) {
     state.projects = payload
+    if (state.projects.lenght === 0) {
+      alert('NO PROJECTS YET')
+    }
   },
   CACHE_PAGES(state, payload) {
     state.pages = payload

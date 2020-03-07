@@ -2,10 +2,10 @@
 export default {
   methods: {
     createProject_() {
-      this.$emit('createProject')
+      this.$emit('createPro')
     },
     createNewPro_() {
-      this.$emit('createPro')
+      this.$emit('createProject')
     },
     props: ['bgcolor'],
   },
@@ -13,7 +13,7 @@ export default {
 </script>
 
 <template>
-  <button class="global-button" @click="createProject_">
+  <button class="global-button" @click="createProject_(), createNewPro_">
     <slot />
   </button>
 </template>
