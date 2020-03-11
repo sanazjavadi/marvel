@@ -5,20 +5,25 @@ export const state = {
   pages: [],
 }
 
-export const getters = {}
+export const getters = {
+  numberOfProjects(state) {
+    if (state.projects.length === 0) {
+      return true
+    } else return false
+  },
+}
 
 export const mutations = {
-  CACHE_PROJECTS(state, payload) {
-    state.projects = payload
-    if (state.projects.lenght === 0) {
-      alert('NO PROJECTS YET')
-    }
+  CACHE_PROJECTS(state, projects) {
+    state.projects = projects
   },
   CACHE_PAGES(state, payload) {
     state.pages = payload
   },
-  REMOVE_PROJECT(state, payload) {
-    state.projects.splice(payload.id, 1)
+  REMOVE_PROJECT(state, id) {
+    state.projects = state.projects.filter((project) => {
+      return project._id !== id
+    })
   },
 }
 
@@ -63,14 +68,15 @@ export const actions = {
         console.log(err.response || err)
       })
   },
-  removeProject({ commit }, payload) {
-    axios
-      .delete(`/projects/:${payload.id}`)
-      .then((res) => {
-        commit('REMOVE_PROJECT', payload.id)
-      })
-      .catch((err) => {
-        console.log(err.response || err)
-      })
+  removeProject({ commit }, id) {
+    commit('REMOVE_PROJECT', id)
+    // axios
+    //   .delete(`/projects/:${id}`)
+    //   .then((res) => {
+    //     commit('REMOVE_PROJECT', res.data)
+    //   })
+    //   .catch((err) => {
+    //     console.log(err.response || err)
+    //   })
   },
 }

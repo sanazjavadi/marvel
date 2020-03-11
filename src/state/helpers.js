@@ -11,6 +11,9 @@ export const usersMethods = {
 export const projectsComputed = {
   ...mapState('project', ['projects', 'pages']),
 }
+export const projectsGetters = {
+  ...mapGetters('project', ['numberOfProjects']),
+}
 
 export const projectsMethods = {
   ...mapActions('project', [

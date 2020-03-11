@@ -1,6 +1,15 @@
 <script>
 export default {
   props: ['pageName'],
+
+  methods: {
+    swichTothumbnailView() {
+      this.$emit('swichTothumbnailView')
+    },
+    swichToListView() {
+      this.$emit('swichToListView')
+    },
+  },
 }
 </script>
 
@@ -8,8 +17,12 @@ export default {
   <div>
     <div class="box d-flex  justify-content-between">
       <div class="rightBox  d-flex flex-wrap justify-content-around">
-        <img src="https://img.icons8.com/material/24/000000/list--v1.png" />
         <img
+          src="https://img.icons8.com/material/24/000000/list--v1.png"
+          @click="swichToListView"
+        />
+        <img
+          @click="swichTothumbnailView"
           src="https://img.icons8.com/material-sharp/24/000000/small-icons.png"
         />
         <select id="" name="last Updated">
